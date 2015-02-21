@@ -1,0 +1,9 @@
+{
+  "name": "septa-route-scraper",
+  "description": "Scrapes septa.org for a list of bus and trolley lines then downloads KML files",
+  "author": "scott pinkelman <scott@scottpinkelman.com>",
+  "dependencies": {
+    "geojson-merge": ">= 0.1.0",
+    "togeojson": ">= 0.11.0"
+  }
+}
