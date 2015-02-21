@@ -4,6 +4,7 @@ import urllib2
 # http://python.dzone.com/articles/how-download-file-python
 import requests
 import shutil
+import os
 
 buses = BeautifulSoup(urllib2.urlopen('http://www.septa.org/schedules/bus/index.html').read())
 bus_matches = buses.find_all("div", class_="route_num")
@@ -39,6 +40,14 @@ for x in trolley_matches:
 			del response
 		else:
 			print "Downloaded from %s failed" % url
+
+print "Converting to geoJSON"
+
+
+projectdir = os.getcwd()
+dldir = os.path.join(projectdir, 'downloads')
+for filename in os.listdir(projectdir):
+     print filename
 
 
 
