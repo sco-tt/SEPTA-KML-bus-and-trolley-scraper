@@ -4,7 +4,7 @@ NodeJS
 npm
 Python 2.7
 Python Libraries:
-	BeautifulSoup                                                   
+	BeautifulSoup
 	urllib2
 	requests
 	shutil
