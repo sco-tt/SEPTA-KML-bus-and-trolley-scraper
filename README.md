@@ -6,17 +6,16 @@ This is a basic Python script for downloading all bus and trolley route trace KM
 
 #### KML Only
 
-Python 2.7
-Python Libraries:
-
-- BeautifulSoup
-- urllib2
-- requests
-- shutil
+- Python 2.7
+- Python Libraries:
+	- BeautifulSoup
+	- urllib2
+	- requests
+	- shutil
 
 
 #### geoJSON
-Additional:
+In addition to the above:
 
 - NodeJS
 - npm
