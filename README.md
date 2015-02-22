@@ -4,30 +4,30 @@ This is a basic Python script for downloading all bus and trolley route trace KM
 
 ## Dependencies
 
-### KML Only
+#### KML Only
 
 Python 2.7
 Python Libraries:
--BeautifulSoup
--urllib2
--requests
--shutil
+
+- BeautifulSoup
+- urllib2
+- requests
+- shutil
 
 
-### geoJSON
+#### geoJSON
 Additional:
 
--NodeJS
--npm
--Python subprocess library
+- NodeJS
+- npm
+- Python subprocess library
 
 
 ## KML Only Usage
 	chmod +x scrape-septa-only-kml.py
 	python scrape-septa-only-kml.py
 
-KML files will appear in __output/kml__. Filename is [route]-[type].[extension], like _13-trolley.kml_ or _33-bus.geojson_. Open them all in Googl Earch to see 
-
+KML files will appear in __output/kml__. Filename is [route]-[type].[extension], like _13-trolley.kml_ or _33-bus.geojson_. Open them all in Google Earth.
 
 ## geoJSON Usage:
 
@@ -52,8 +52,4 @@ That will compress all_routes.geojson to ~10 MB. It's possible to load with leaf
 
 and so on.
 
-Leaflet can load the 10MB geoJSON file, but it will put some stress on your browser and take a _long_ time to load. Proof of concept [here](http://jsfiddle.net/sco_tt/tpp4jof7/3/).
-
-
-
-
+Leaflet can load the 10MB geoJSON file, but it will put some stress on your browser and take a _long_ time to load. Proof of concept [here](http://jsfiddle.net/sco_tt/tpp4jof7/4/).
