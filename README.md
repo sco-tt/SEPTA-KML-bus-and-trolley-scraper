@@ -2,6 +2,9 @@
 
 This is a basic Python script for downloading all bus and trolley route trace KML files from the [SEPTA data page](http://www3.septa.org/hackathon/). The script uses the Beautiful Soup library to build a list of routes from the list of [bus](http://www.septa.org/schedules/bus/index.html) and [trolley](http://www.septa.org/schedules/trolley/index.html) routes and then downloads a KML for each file. Using Node modules, each .KML can be converted to a geoJSON file, and each geoJSON can be combined into a single large geoJSON file (see geoJSON Usage).
 
+Right now the script is set up for one time use; there are no timesteamprs and nothing incrementally add changes. So, to re-run it or use a different version of the script you'll need to blow away the __output__ directory first:
+	rm -rf output
+
 ## Dependencies
 
 #### KML Only
