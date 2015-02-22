@@ -7,8 +7,9 @@ import subprocess
 
 # Make Project Directories and assign variables
 projectdir = os.getcwd()
+os.mkdir(os.path.join(projectdir, 'output'))		
+os.mkdir(os.path.join(projectdir, 'output/kml'))		
 kml_dir = os.path.join(projectdir, 'output/kml')
-geojson_dir = os.path.join(projectdir, 'output/geojson')
 
 # scrape data from SEPTA's website to get all of the routes
 buses = BeautifulSoup(urllib2.urlopen('http://www.septa.org/schedules/bus/index.html').read())
@@ -45,6 +46,9 @@ for x in trolley_matches:
 			print "Downloaded from %s failed" % url
 
 print "Converting to geoJSON"
+os.mkdir(os.path.join(projectdir, 'output/geojson'))
+geojson_dir = os.path.join(projectdir, 'output/geojson')
+
 # Define node module utilities
 togeojson_util = os.path.join(projectdir, 'node_modules/togeojson')
 geojson_merge_util = os.path.join(projectdir, 'node_modules/geojson-merge')

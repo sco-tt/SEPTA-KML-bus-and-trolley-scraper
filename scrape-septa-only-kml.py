@@ -6,8 +6,9 @@ import os
 
 # Make Project Directories and assign variables
 projectdir = os.getcwd()
+os.mkdir(os.path.join(projectdir, 'output'))		
+os.mkdir(os.path.join(projectdir, 'output/kml'))		
 kml_dir = os.path.join(projectdir, 'output/kml')
-geojson_dir = os.path.join(projectdir, 'output/geojson')
 
 # scrape data from SEPTA's website to get all of the routes
 buses = BeautifulSoup(urllib2.urlopen('http://www.septa.org/schedules/bus/index.html').read())
