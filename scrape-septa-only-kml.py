@@ -3,14 +3,11 @@ import urllib2
 import requests
 import shutil
 import os
-import subprocess
 
 # Make Project Directories and assign variables
 projectdir = os.getcwd()
-os.mkdir(os.path.join(projectdir, 'kml'))
-kml_dir = os.path.join(projectdir, 'kml')
-os.mkdir(os.path.join(projectdir, 'geojson'))
-geojson_dir = os.path.join(projectdir, 'geojson')
+kml_dir = os.path.join(projectdir, 'output/kml')
+geojson_dir = os.path.join(projectdir, 'output/geojson')
 
 # scrape data from SEPTA's website to get all of the routes
 buses = BeautifulSoup(urllib2.urlopen('http://www.septa.org/schedules/bus/index.html').read())
@@ -45,26 +42,3 @@ for x in trolley_matches:
 			del response
 		else:
 			print "Downloaded from %s failed" % url
-
-print "Converting to geoJSON"
-# Define node module utilities
-togeojson_util = os.path.join(projectdir, 'node_modules/togeojson')
-geojson_merge_util = os.path.join(projectdir, 'node_modules/geojson-merge')
-
-for filename in os.listdir(kml_dir):
-	filepath = os.path.join(kml_dir, filename)
-	route_name = os.path.splitext(filename)[0]
-	subprocess.call(["%s/togeojson %s > %s/%s.geojson" % (togeojson_util, filepath, geojson_dir, route_name)], shell=True)
-	print "%s convereted to geoJSON" % route_name
-	
-print "Merging geojson files"
-all_geojson_files = ""
-for filename in os.listdir(geojson_dir):
-	filepath = os.path.join(geojson_dir, filename)
-	all_geojson_files += "geojson/%s " % filename
-subprocess.call(["%s/geojson-merge %s > all_routes.geojson" % (geojson_merge_util, all_geojson_files)], shell=True)
-
-
-
-
-
