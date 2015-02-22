@@ -11,7 +11,7 @@ Right now the script is set up for one time use; there are no timesteamprs and n
 
 - Python 2.7
 - Python Libraries:
-	- BeautifulSoup
+	- BeautifulSoup4
 	- urllib2
 	- requests
 	- shutil
@@ -26,7 +26,6 @@ In addition to the above:
 
 
 ## KML Only Usage
-	chmod +x scrape-septa-only-kml.py
 	python scrape-septa-only-kml.py
 
 KML files will appear in __output/kml__. Filename is [route]-[type].[extension], like _13-trolley.kml_ or _33-bus.geojson_. Open them all in Google Earth.
@@ -34,7 +33,6 @@ KML files will appear in __output/kml__. Filename is [route]-[type].[extension],
 ## geoJSON Usage:
 
 	npm install
-	chmod +x scrape-septa-kml-geojson.py
 	python scrape-septa-kml-geojson.py
 
 This will populate two directorie, __output/kml__ and __output/geojson__ that include all routes of the respective file type. 
