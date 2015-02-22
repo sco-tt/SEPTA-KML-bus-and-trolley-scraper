@@ -42,7 +42,7 @@ This will populate two directorie, __output/kml__ and __output/geojson__ that in
 If you'd like to compress _all-routes.geojson_, install the [geojson-minifier](https://github.com/igorti/geojson-minifier) package globally.
 
 	npm install -g geojson-minifier
-	geojson-minifier -o pack -f output/all_routes.geojson -p 6
+	geojson-minifier -o pack -f output/all-routes.geojson -p 6
 
 That will compress all_routes.geojson to ~10 MB. It's possible to load with leaflet.js if you change the extension to .js and declare a variable in the first line, like:
 
