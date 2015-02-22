@@ -11,15 +11,14 @@ Right now the script is set up for one time use; there are no timesteamprs and n
 
 - Python 2.7
 - Python Libraries:
-	- BeautifulSoup4
+	- BeautifulSoup4		
 	- urllib2
 	- requests
 	- shutil
 
 
 #### geoJSON
-In addition to the above:
-
+	
 - NodeJS
 - npm
 - Python subprocess library
@@ -42,7 +41,7 @@ If you'd like to compress _all-routes.geojson_, install the [geojson-minifier](h
 	npm install -g geojson-minifier
 	geojson-minifier -o pack -f output/all-routes.geojson -p 6
 
-That will compress all_routes.geojson to ~10 MB. It's possible to load with leaflet.js if you change the extension to .js and declare a variable in the first line, like:
+That will compress all-routes.geojson to 10 or 11 MB. It's possible to load with leaflet.js if you change the extension to .js and declare a variable in the first line, like:
 
 	var septa = {
 	  "type": "FeatureCollection",
@@ -52,4 +51,4 @@ That will compress all_routes.geojson to ~10 MB. It's possible to load with leaf
 
 and so on.
 
-Leaflet can load the 10MB geoJSON file, but it will put some stress on your browser and take a _long_ time to load. Proof of concept [here](http://jsfiddle.net/sco_tt/tpp4jof7/4/).
+Leaflet.js can load the 11MB geoJSON file, but it will put some stress on your browser and take a _long_ time to load. And it's surely not the best way to use this data. Proof of concept [here](http://jsfiddle.net/sco_tt/tpp4jof7/4/).
