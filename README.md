@@ -7,20 +7,19 @@ This is a basic Python script for downloading all bus and trolley route trace KM
 ### KML Only
 
 Python 2.7
-
 Python Libraries:
-BeautifulSoup
-urllib2
-requests
-shutil
-os
+-BeautifulSoup
+-urllib2
+-requests
+-shutil
+
 
 ### geoJSON
 Additional:
 
-NodeJS
-npm
-Python subprocess library
+-NodeJS
+-npm
+-Python subprocess library
 
 
 ## KML Only Usage
@@ -52,6 +51,8 @@ That will compress all_routes.geojson to ~10 MB. It's possible to load with leaf
 	      "type": "Feature",
 
 and so on.
+
+Leaflet can load the 10MB geoJSON file, but it will put some stress on your browser and take a _long_ time to load. Proof of concept [here](http://jsfiddle.net/sco_tt/tpp4jof7/3/).
 
 
 
