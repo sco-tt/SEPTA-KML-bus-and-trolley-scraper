@@ -48,7 +48,11 @@ That will compress all-routes.geojson to 10 or 11 MB. It's possible to load with
 	  "features": [
 	    {
 	      "type": "Feature",
-
+	
 and so on.
 
 Leaflet.js can load the 11MB geoJSON file, but it will put some stress on your browser and take a _long_ time to load. And it's surely not the best way to use this data. Proof of concept [here](http://jsfiddle.net/sco_tt/tpp4jof7/4/).
+
+## Problems
+
+This is my first project in Python; please contact me if I've made a major error.
